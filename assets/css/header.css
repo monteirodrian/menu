@@ -1,0 +1,56 @@
+/*==================================================*/
+
+header {
+    background-color: #3E3E3E;
+    color: #FFF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    /* Desloca o elemento onde está inserido */
+    position: relative;
+}
+
+/*==================================================*/
+#logo {
+    height: 52px;
+    width: 52px;
+}
+
+nav ul {
+    /* Remove os bullet points */
+    list-style: none;
+
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    /* Remove underline no link */
+    text-decoration: none;
+    
+    padding: 8px 16px;
+    color: #FFF;
+}
+
+nav ul li a:hover {
+    border-bottom: solid 4px #70a340;
+    background-color: #ffffff33;
+    transition: all 0.3s;
+}
+/*===================================================*/
+
+.menu-toggle {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+/*============= Responsividade ======================*/
+
