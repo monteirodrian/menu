@@ -15,6 +15,8 @@ header {
 #logo {
     height: 52px;
     width: 52px;
+    position: relative;
+    z-index: 3;
 }
 
 nav ul {
@@ -49,16 +51,23 @@ nav ul li a:hover {
 
 .menu-icon {
     display: none;
+    z-index: 3;
 }
 
 /*============= Responsividade ======================*/
 
 @media screen and (max-width: 1024px) {
+    header{
+        justify-content: space-between;
+        padding: 0 24px;
+    }
+
     .menu-icon {
         display: flex;
         align-items: center;
         color: #FFF;
         cursor: pointer;
+        transition: 0.3s ease;
     }
 
     .menu-icon i{
@@ -78,7 +87,7 @@ nav ul li a:hover {
         /* Definindo efeito para deslixar menu para 100% esquerda */
         transform: translateX(-200%);
 
-        transition: 0.3 ease;
+        transition: 0.3s ease;
         z-index: 2;
         padding: 90px 20px;
         background-color: #3E3E3E;
@@ -99,7 +108,17 @@ nav ul li a:hover {
         display: block;
     }
 
-    .menu-toggle:checked + .menu-icon i{
+    .menu-toggle:checked + .menu-icon {
         transform: rotate(180deg);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
     }
 }
