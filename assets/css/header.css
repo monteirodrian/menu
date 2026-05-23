@@ -36,7 +36,6 @@ nav ul li a {
 nav ul li a:hover {
     border-bottom: solid 4px #70a340;
     background-color: #ffffff33;
-    transition: all 0.3s;
 }
 /*===================================================*/
 
@@ -54,3 +53,53 @@ nav ul li a:hover {
 
 /*============= Responsividade ======================*/
 
+@media screen and (max-width: 1024px) {
+    .menu-icon {
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        cursor: pointer;
+    }
+
+    .menu-icon i{
+        transition: transform 0.3s ease, opacity 0.3s ease;;
+    }
+
+    .menu-icon .icon-closed {
+        display: none;
+    }
+
+    .menu-lateral {
+        width: 260px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* Definindo efeito para deslixar menu para 100% esquerda */
+        transform: translateX(-200%);
+
+        transition: 0.3 ease;
+        z-index: 2;
+        padding: 90px 20px;
+        background-color: #3E3E3E;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Seleciona o meu-toggle pelo checkbox e procura um irmão(~) e aplica transição */
+    .menu-toggle:checked ~ .menu-lateral {
+        transform: translateX(0);
+    }
+
+    /* Seleciona o irmão IMEDIATAMWNTE após o checkbox clicado */
+    .menu-toggle:checked + .menu-icon .icon-open {
+        display: none;
+    }
+
+    .menu-toggle:checked + .menu-icon .icon-closed {
+        display: block;
+    }
+
+    .menu-toggle:checked + .menu-icon i{
+        transform: rotate(180deg);
+    }
+}
